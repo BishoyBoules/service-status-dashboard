@@ -1,7 +1,16 @@
-import Image from 'next/image'
+'use client'
+import { useContext } from 'react'
+import Login from './pages/Login/page.jsx'
+import Dashboard from './pages/dashboard/page.jsx'
+import { contextStore } from './store/context.js'
 
 export default function Home () {
+  const context = useContext(contextStore)
+
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'></main>
+    <main className='flex justify-center items-center h-screen'>
+      {!context.logged && <Login />}
+      {context.logged && <Dashboard />}
+    </main>
   )
 }
