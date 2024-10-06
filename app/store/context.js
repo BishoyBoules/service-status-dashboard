@@ -7,12 +7,7 @@ export const contextStore = createContext({
 })
 
 export function ContextProvider ({ children }) {
-  const [logged, setLogged] = useState(false)
-
-  const initialValue = {
-    logged: logged,
-    setLogged: setLogged
-  }
+  const [logged, setLogged] = useState(true)
 
   return (
     <contextStore.Provider value={{ logged, setLogged }}>

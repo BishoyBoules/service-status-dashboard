@@ -8,7 +8,7 @@ export default function Home () {
   const context = useContext(contextStore)
 
   return (
-    <main className='flex justify-center items-center h-screen'>
+    <main className='flex justify-center items-center h-screen p-0 m-0'>
       {!context.logged && <Login />}
       {context.logged && <Dashboard />}
     </main>

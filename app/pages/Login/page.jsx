@@ -1,7 +1,7 @@
 'use client'
 
 import { useContext } from 'react'
-import * as data from '../../data/users.json'
+import data from '@/public/data/users.json'
 import ClientContext from '@/app/hooks/ClientContext'
 import { contextStore } from '@/app/store/context'
 
