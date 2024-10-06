@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Button from '@/app/components/Button'
 import Server from './Server'
+import data from '../../../public/data/servers.json'
 
 const Filter = () => {
   const [servers, setServers] = useState()
@@ -10,15 +11,8 @@ const Filter = () => {
   const [sortedBy, setSortedBy] = useState('name')
 
   useEffect(() => {
-    async function fetchData () {
-      await fetch(`${process.env.NEXT_PUBLIC_URL}/data/servers.json`)
-        .then(res => res.json())
-        .then(data => {
-          setServers(data.servers)
-          setConstServers(data.servers)
-        })
-    }
-    fetchData()
+    setServers(data.servers)
+    setConstServers(data.servers)
   }, [])
 
   function handleChange (e) {
