@@ -1,3 +1,5 @@
+'use client'
+
 import { useContext } from 'react'
 import { contextStore } from '@/app/store/context'
 import Button from '@/app/components/Button'
